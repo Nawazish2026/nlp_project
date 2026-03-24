@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SAP Order-to-Cash Graph-Based Data Modeling and Query System with NL interface">
+    <title>SAP O2C Graph Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-left">
+                <div class="logo">◈</div>
+                <div>
+                    <h1>Order to Cash</h1>
+                    <span class="subtitle">Graph Explorer</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span id="status-badge" class="badge">Not loaded</span>
+                <button id="btn-load-data" class="primary-btn">⚡ Load Dataset</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="graph-panel">
+                <div class="graph-toolbar">
+                    <button id="btn-fit" class="tool-btn" title="Fit graph">⊞ Fit</button>
+                    <button id="btn-reset" class="tool-btn" title="Reset view">↺ Reset</button>
+                    <span id="graph-stats" class="graph-stats"></span>
+                </div>
+                <div id="cy"></div>
+                <div id="loading" class="loading-overlay hidden">
+                    <div class="spinner"></div>
+                    <span>Processing dataset...</span>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <div class="chat-panel glass">
+                    <div class="chat-header">
+                        <span class="chat-dot"></span>
+                        <strong>Graph Agent</strong>
+                    </div>
+                    <div class="chat-history" id="chat-history">
+                        <div class="msg bot">Hi! I can help you analyze the Order to Cash process. Try asking about orders, products, deliveries, or billing.</div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="chat-input-field" placeholder="Ask about the dataset..." />
+                        <button id="btn-send" title="Send">➤</button>
+                    </div>
+                </div>
+
+                <div class="node-inspector glass">
+                    <div class="inspector-header">
+                        <h3>Node Inspector</h3>
+                        <button id="btn-expand" class="tool-btn hidden" title="Expand neighbours">⊕ Expand</button>
+                    </div>
+                    <div id="inspector-content">Click a node in the graph to inspect.</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "sap-order-to-cash-graph",
+  "version": "1.0.0",
+  "description": "Graph-Based Data Modeling for SAP O2C",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "csv-parser": "^3.0.0",
+    "express": "^4.18.2",
+    "sqlite3": "^6.0.1"
+  }
+}
